@@ -4,12 +4,5 @@
         "h_vmem" : "8G",
         "mem_free" : "6G",
         "m_mem_free" : "5G"
-    },
-    "make_ug" :
-    {
-        "h_vmem" : "10G",
-        "mem_free" :  "8G",
-        "m_mem_free" : "6G"
-    },
-
+    }
 }
