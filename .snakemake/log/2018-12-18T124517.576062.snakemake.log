@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	get_R1_fasta
+	1
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D13.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D13.BAF_R1.fasta
+    jobid: 0
+    wildcards: sample=D13.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D13.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D13.BAF_R1.fasta 
+        
+Finished job 0.
+1 of 1 steps (100%) done
+Shutting down, this might take some time.
+Complete log: /home/leej39/RNAseq_analysis/.snakemake/log/2018-12-18T124517.576062.snakemake.log

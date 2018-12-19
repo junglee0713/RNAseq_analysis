@@ -1,0 +1,23 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 2
+Rules claiming more threads will be scaled down.
+Job counts:
+	count	jobs
+	1	get_pctid_alnlen
+	1
+
+rule get_pctid_alnlen:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/D27.BAF_against_D25.BAF_genes_nucl.fa.blastout
+    output: /scr1/users/leej39/USDA_RUN22/pctid_alnlen/D27.BAF_against_D25.BAF_genes_nucl.fa.pctid_alnlen
+    jobid: 0
+    wildcards: sample=D27.BAF, contig_name=D25.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/pctid_alnlen
+        awk -F"	" '{print $3, $4}' < /scr1/users/leej39/USDA_RUN22/blast_against_contigs/D27.BAF_against_D25.BAF_genes_nucl.fa.blastout > /scr1/users/leej39/USDA_RUN22/pctid_alnlen/D27.BAF_against_D25.BAF_genes_nucl.fa.pctid_alnlen
+        
+Finished job 0.
+1 of 1 steps (100%) done
+Shutting down, this might take some time.
+Complete log: /home/leej39/RNAseq_analysis/.snakemake/log/2018-12-19T081314.280064.snakemake.log

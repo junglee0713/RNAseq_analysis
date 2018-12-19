@@ -12,11 +12,25 @@ DB_LIST = get_db_list(config["CONTIGS_DB"], fasta_extension = ".fa")
 BLASTOUT_DIR = PROJECT_DIR + "/" + config["BLASTOUT_DIR"]
 DECONTAM_DIR = PROJECT_DIR + "/" + config["SUNBEAM_OUTPUT_DIR"] + "/" + config["QC_DIR"] + "/" + config["DECONTAM_DIR"]
 R1_FASTA_DIR = PROJECT_DIR + "/" + config["R1_FASTA_DIR"]
+PCTID_ALNLEN_DIR = PROJECT_DIR + "/" + config["PCTID_ALNLEN_DIR"]
+
 workdir: PROJECT_DIR
 
 rule all:
     input:
-        expand(BLASTOUT_DIR + "/{sample}_against_{contig_name}.blastout", sample = SAMPLE_IDS, contig_name = DB_LIST)
+        expand(PCTID_ALNLEN_DIR + "/{sample}_against_{contig_name}.pctid_alnlen", sample = SAMPLE_IDS, contig_name = DB_LIST)
+
+rule get_pctid_alnlen:
+    input:
+        BLASTOUT_DIR + "/{sample}_against_{contig_name}.blastout"
+    output:
+        PCTID_ALNLEN_DIR + "/{sample}_against_{contig_name}.pctid_alnlen"
+    params: PCTID_ALNLEN_DIR
+    shell:
+        """
+        mkdir -p {params}
+        awk -F"\t" '{{print $3, $4}}' < {input} > {output}
+        """
 
 rule blast:
     input: 

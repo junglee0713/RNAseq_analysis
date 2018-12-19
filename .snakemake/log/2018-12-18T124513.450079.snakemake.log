@@ -1,0 +1,228 @@
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cluster nodes: 40
+Job counts:
+	count	jobs
+	1	all
+	48	blast
+	8	get_R1_fasta
+	57
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/inoculum.penn_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/inoculum.penn_R1.fasta
+    jobid: 54
+    wildcards: sample=inoculum.penn
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/inoculum.penn_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/inoculum.penn_R1.fasta 
+        
+Submitted job 54 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D12.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D12.BAF_R1.fasta
+    jobid: 49
+    wildcards: sample=D12.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D12.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D12.BAF_R1.fasta 
+        
+Submitted job 49 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D27.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D27.BAF_R1.fasta
+    jobid: 53
+    wildcards: sample=D27.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D27.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D27.BAF_R1.fasta 
+        
+Submitted job 53 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/Neg.1_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    jobid: 51
+    wildcards: sample=Neg.1
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/Neg.1_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta 
+        
+Submitted job 51 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D25.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D25.BAF_R1.fasta
+    jobid: 52
+    wildcards: sample=D25.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D25.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D25.BAF_R1.fasta 
+        
+Submitted job 52 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D28.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D28.BAF_R1.fasta
+    jobid: 55
+    wildcards: sample=D28.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D28.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D28.BAF_R1.fasta 
+        
+Submitted job 55 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D13.BAF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D13.BAF_R1.fasta
+    jobid: 56
+    wildcards: sample=D13.BAF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D13.BAF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D13.BAF_R1.fasta 
+        
+Submitted job 56 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule get_R1_fasta:
+    input: /scr1/users/leej39/USDA_RUN22/R1_FASTA, /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D14.BMF_R1.fastq.gz
+    output: /scr1/users/leej39/USDA_RUN22/R1_FASTA/D14.BMF_R1.fasta
+    jobid: 50
+    wildcards: sample=D14.BMF
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/R1_FASTA
+        vsearch --fastq_filter /scr1/users/leej39/USDA_RUN22/sunbeam_output/qc/decontam/D14.BMF_R1.fastq.gz         --fastaout /scr1/users/leej39/USDA_RUN22/R1_FASTA/D14.BMF_R1.fasta 
+        
+Submitted job 50 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+Waiting at most 90 seconds for missing files.
+Finished job 51.
+1 of 57 steps (2%) done
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D28.BAF_genes_nucl.fa.blastout
+    jobid: 3
+    wildcards: sample=Neg.1, contig_name=D28.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/D28.BAF_genes_nucl.fa
+        
+Submitted job 3 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D13.BAF_genes_nucl.fa.blastout
+    jobid: 40
+    wildcards: sample=Neg.1, contig_name=D13.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/D13.BAF_genes_nucl.fa
+        
+Submitted job 40 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D27.BAF_genes_nucl.fa.blastout
+    jobid: 17
+    wildcards: sample=Neg.1, contig_name=D27.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/D27.BAF_genes_nucl.fa
+        
+Submitted job 17 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D12.BAF_genes_nucl.fa.blastout
+    jobid: 39
+    wildcards: sample=Neg.1, contig_name=D12.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/D12.BAF_genes_nucl.fa
+        
+Submitted job 39 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_inoculum.penn_genes_nucl.fa.blastout
+    jobid: 18
+    wildcards: sample=Neg.1, contig_name=inoculum.penn_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/inoculum.penn_genes_nucl.fa
+        
+Submitted job 18 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+
+rule blast:
+    input: /scr1/users/leej39/USDA_RUN22/blast_against_contigs, /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D25.BAF_genes_nucl.fa.blastout
+    jobid: 27
+    wildcards: sample=Neg.1, contig_name=D25.BAF_genes_nucl.fa
+
+
+        mkdir -p /scr1/users/leej39/USDA_RUN22/blast_against_contigs
+        blastn -query /scr1/users/leej39/USDA_RUN22/R1_FASTA/Neg.1_R1.fasta -evalue 1e-5 -outfmt 6         -db /scr1/users/leej39/USDA_RUN22/RUN12_blastdb/D25.BAF_genes_nucl.fa
+        
+Submitted job 27 with external jobid 'removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue'.
+Error in rule blast:
+    jobid: 3
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D28.BAF_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Error in rule blast:
+    jobid: 40
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D13.BAF_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Error in rule blast:
+    jobid: 17
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D27.BAF_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Error in rule blast:
+    jobid: 39
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D12.BAF_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Error in rule blast:
+    jobid: 18
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_inoculum.penn_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Error in rule blast:
+    jobid: 27
+    output: /scr1/users/leej39/USDA_RUN22/blast_against_contigs/Neg.1_against_D25.BAF_genes_nucl.fa.blastout
+    cluster_jobid: removed environment variable LD_LIBRARY_PATH from submit environment - it is considered a security issue
+
+Finished job 53.
+2 of 57 steps (4%) done
+Finished job 52.
+3 of 57 steps (5%) done
+Finished job 49.
+4 of 57 steps (7%) done
+Finished job 56.
+5 of 57 steps (9%) done
+Finished job 54.
+6 of 57 steps (11%) done
+Finished job 55.
+7 of 57 steps (12%) done
+Finished job 50.
+8 of 57 steps (14%) done
+Shutting down, this might take some time.
+Exiting because a job execution failed. Look above for error message
+mail -s 'An error occurred' junglee0713@gmail.com < /home/leej39/RNAseq_analysis/.snakemake/log/2018-12-18T124513.450079.snakemake.log
+Complete log: /home/leej39/RNAseq_analysis/.snakemake/log/2018-12-18T124513.450079.snakemake.log
