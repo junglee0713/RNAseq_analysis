@@ -8,3 +8,6 @@ SUNBEAM_OUTPUT_DIR: "sunbeam_output"
 QC_DIR: "qc"
 DECONTAM_DIR: "decontam"
 PCTID_ALNLEN_DIR: "pctid_alnlen"
+BLAST_FILTER:
+    PCTID_CUT: "95"
+    ALNLEN_CUT: "100"
