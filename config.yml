@@ -11,4 +11,4 @@ DECONTAM_DIR: "decontam"
 PCTID_ALNLEN_DIR: "pctid_alnlen"
 BLAST_FILTER:
     PCTID_CUT: "95"
-    ALNLEN_CUT: "100"
+    ALNPCT_CUT: "95"
