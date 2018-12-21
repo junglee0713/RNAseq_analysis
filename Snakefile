@@ -15,12 +15,27 @@ R1_FASTA_DIR = PROJECT_DIR + "/" + config["R1_FASTA_DIR"]
 PCTID_ALNLEN_DIR = PROJECT_DIR + "/" + config["PCTID_ALNLEN_DIR"]
 FILTERED_DIR = PROJECT_DIR + "/pctid_" + config["BLAST_FILTER"]["PCTID_CUT"] + "_alnlen_" + config["BLAST_FILTER"]["ALNLEN_CUT"]
 FILTER_OUT_BEGIN = "pctid_" + config["BLAST_FILTER"]["PCTID_CUT"] + "_alnlen_" + config["BLAST_FILTER"]["ALNLEN_CUT"] 
+CONTIG_INFO_DIR = PROJECT_DIR + "/" + config["CONTIG_INFO_DIR"]
 
 workdir: PROJECT_DIR
 
 rule all:
     input:
-        expand(FILTERED_DIR + "/" + FILTER_OUT_BEGIN + "_{sample}_against_{contig_name}.blastout_filtered", sample = SAMPLE_IDS, contig_name = DB_LIST)
+        expand(FILTERED_DIR + "/" + FILTER_OUT_BEGIN + "_{sample}_against_{contig_name}.blastout_filtered", sample = SAMPLE_IDS, contig_name = DB_LIST),
+        expand(CONTIG_INFO_DIR + "/{contig_name}.start_stop", contig_name = DB_LIST)
+
+rule get_contig_start_stop:
+    input: 
+        config["CONTIGS_DB"] + "/{contig_name}" 
+    output:
+        CONTIG_INFO_DIR + "/{contig_name}.start_stop"
+    params:
+        OUTPUT_DIR = CONTIG_INFO_DIR
+    shell:
+        """
+        mkdir -p {params.OUTPUT_DIR}
+        awk '$1 ~ />cap3-contigs/ {{print $1, $3, $5}}' < {input} > {output}
+        """
 
 rule filter_blast:
     input: 
