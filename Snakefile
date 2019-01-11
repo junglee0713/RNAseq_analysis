@@ -16,17 +16,29 @@ PCTID_ALNLEN_DIR = PROJECT_DIR + "/" + config["PCTID_ALNLEN_DIR"]
 FILTERED_DIR = PROJECT_DIR + "/pctid_" + config["BLAST_FILTER"]["PCTID_CUT"] + "_alnpct_" + config["BLAST_FILTER"]["ALNPCT_CUT"]
 FILTER_OUT_BEGIN = "pctid_" + config["BLAST_FILTER"]["PCTID_CUT"] + "_alnpct_" + config["BLAST_FILTER"]["ALNPCT_CUT"] 
 CONTIG_INFO_DIR = PROJECT_DIR + "/" + config["CONTIG_INFO_DIR"]
+KEGG_OUT_DIR = PROJECT_DIR + "/" + config["KEGG_BLAST_OUT_DIR"]
 
 workdir: PROJECT_DIR
 
 rule all:
     input:
-        expand(PCTID_ALNLEN_DIR + "/{sample}_against_{contig_name}.pctid_alnlen", sample = SAMPLE_IDS, contig_name = DB_LIST)
+        expand(KEGG_OUT_DIR + "/{sample}_against_kegg.blastout", sample = SAMPLE_IDS)
 
-#rule all:
-#    input:
-#        expand(FILTERED_DIR + "/" + FILTER_OUT_BEGIN + "_{sample}_against_{contig_name}.blastout_filtered", sample = SAMPLE_IDS, contig_name = DB_LIST),
-#        expand(CONTIG_INFO_DIR + "/{contig_name}.start_stop", contig_name = DB_LIST)
+rule blast_kegg:
+    input:
+        R1_FASTA = R1_FASTA_DIR + "/{sample}_R1.fasta"
+    params:
+        OUTPUT_DIR = KEGG_OUT_DIR,
+        KEGG_DB = config["KEGG_prot_DB"]
+    output:
+        KEGG_OUT_DIR + "/{sample}_against_kegg.blastout"
+    shell:
+        """
+        mkdir -p {params.OUTPUT_DIR}
+        blastx -query {input.R1_FASTA} -evalue 1e-5 -outfmt 6 \
+        -db {params.KEGG_DB} \
+        -out {output} -num_threads 8 -max_target_seqs 10
+        """
 
 rule get_contig_start_stop:
     input: 

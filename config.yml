@@ -10,5 +10,7 @@ QC_DIR: "qc"
 DECONTAM_DIR: "decontam"
 PCTID_ALNLEN_DIR: "pctid_alnlen"
 BLAST_FILTER:
-    PCTID_CUT: "95"
+    PCTID_CUT: "99"
     ALNPCT_CUT: "95"
+KEGG_prot_DB: "/home/leej39/kegg/genes/fasta/species_prokaryotes.pep"
+KEGG_BLAST_OUT_DIR: "blast_against_kegg"
